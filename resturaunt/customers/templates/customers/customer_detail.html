@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Customer Details</h1>
+
+<p><b>Name:</b> {{ customer.name }}</p>
+<p><b>Email:</b> {{ customer.email }}</p>
+<p><b>Phone:</b> {{ customer.phone }}</p>
+
+<h2>Orders</h2>
+<ul>
+    {% for order in orders %}
+        <li>
+            {{ order.product.name }} - Quantity: {{ order.quantity }} - Price: {{ order.price }}
+        </li>
+    {% empty %}
+        <li>No orders for this customer.</li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'customer_list' %}">⬅ Back to Customer List</a>
+{% endblock %}

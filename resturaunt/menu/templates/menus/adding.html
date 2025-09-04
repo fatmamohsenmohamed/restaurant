@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Add New Menu Item</h1>
+
+<form method="post">
+    {% csrf_token %}
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name" required><br><br>
+
+    <label for="price">Price:</label><br>
+    <input type="number" id="price" name="price" step="0.01" required><br><br>
+
+    <label for="description">Description:</label><br>
+    <textarea id="description" name="description" rows="3" required></textarea><br><br>
+
+    <button type="submit">Add</button>
+</form>
+
+<a href="{% url 'displaying' %}">⬅ Back to Menu</a>
+{% endblock %}

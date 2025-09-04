@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Menu Items</h1>
+
+<a href="{% url 'adding' %}">➕ Add New Item</a>
+
+<ul>
+    {% for item in menu_items %}
+        <li>
+            <b>{{ item.name }}</b> - ${{ item.price }} <br>
+            {{ item.description }}
+            <br>
+            <a href="{% url 'editing' item.id %}">✏ Edit</a> |
+            <a href="{% url 'deleting' item.id %}">🗑 Delete</a>
+        </li>
+        <hr>
+    {% empty %}
+        <li>No items in the menu yet.</li>
+    {% endfor %}
+</ul>
+{% endblock %}

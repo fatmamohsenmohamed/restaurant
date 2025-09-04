@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Items</title>
+</head>
+<body>
+    <h2>Add Items to Order #{{ order.id }}</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="item_name">Item Name:</label><br>
+        <input type="text" name="item_name" required><br><br>
+
+        <label for="item_quantity">Quantity:</label><br>
+        <input type="number" name="item_quantity" min="1" required><br><br>
+
+        <button type="submit">Add Item</button>
+    </form>
+
+    <br>
+    <a href="{% url 'displaying' order.id %}">Finish & View Order</a>
+</body>
+</html>

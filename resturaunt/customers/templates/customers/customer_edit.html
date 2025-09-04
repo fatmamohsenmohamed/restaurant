@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Edit Customer</h1>
+
+<form method="post">
+    {% csrf_token %}
+    <label>Name:</label><br>
+    <input type="text" name="name" value="{{ customer_data.name }}" required><br><br>
+
+    <label>Email:</label><br>
+    <input type="email" name="email" value="{{ customer_data.email }}" required><br><br>
+
+    <label>Phone:</label><br>
+    <input type="text" name="phone" value="{{ customer_data.phone }}" required><br><br>
+
+    <button type="submit">Save</button>
+</form>
+
+<a href="{% url 'customer_list' %}">⬅ Back to Customer List</a>
+{% endblock %}
