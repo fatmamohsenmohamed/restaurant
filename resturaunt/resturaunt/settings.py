@@ -81,7 +81,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'iti_project',       # The database name you created in PostgreSQL
         'USER': 'postgres',      # Your PostgreSQL username
-        'PASSWORD': 'Femos526199',  # Your PostgreSQL password
+      # Your PostgreSQL password
         'HOST': 'localhost',          # Or IP address of your database server
         'PORT': '5432',
     }
